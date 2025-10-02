@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo: Pedra, Papel ou Tesoura</title>
+</head>
+<body>
+
+<script>
+    let jogador = prompt('Escolha: Pedra, Papel ou Tesoura').toLowerCase();
+
+    let computadorRandom = Math.random();
+    let computador;
+
+    if (computadorRandom <= 0.33) {
+        computador = 'pedra';
+    } else if (computadorRandom <= 0.66) {
+        computador = 'papel';
+    } else {
+        computador = 'tesoura';
+    }
+
+    alert('Jogador escolheu: ' + jogador);
+    alert('Computador escolheu: ' + computador);
+
+    if (jogador === computador) {
+        alert('Resultado: Empate');
+    } else if (
+        (jogador === 'pedra' && computador === 'tesoura') ||
+        (jogador === 'papel' && computador === 'pedra') ||
+        (jogador === 'tesoura' && computador === 'papel')
+    ) {
+        alert('Resultado: Você venceu!');
+    } else if (
+        (jogador === 'pedra' && computador === 'papel') ||
+        (jogador === 'papel' && computador === 'tesoura') ||
+        (jogador === 'tesoura' && computador === 'pedra')
+    ) {
+        alert('Resultado: O computador venceu!');
+    } else {
+        alert('Escolha inválida! Tente novamente.');
+    }
+</script>
+
+</body>
+</html>
