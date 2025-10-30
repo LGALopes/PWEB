@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE 12</title>
+</head>
+<body>
+    <script>
+        //EXERCÍCIO 01
+        function Retangulo(x, y){
+            this.x = x;
+            this.y = y;
+
+            this.calcularArea = function(){
+                return this.x * this.y;
+            }
+        }
+        let base = parseFloat(prompt("Digite a base do retângulo:"));
+        let altura = parseFloat(prompt("Digite a altura do retângulo:"));
+        
+        let meuRetangulo = new Retangulo(base, altura);
+        alert("A área do retângulo é: " + meuRetangulo.calcularArea);
+
+        //EXERCÍCIO 02
+        class Conta{
+            constructor(nomeCorrentista, banco, numeroConta, saldo){
+                this.nomeCorrentista = nomeCorrentista;
+                this.banco = banco;
+                this.numeroConta = numeroConta;
+                this.saldo = saldo;
+            }
+            getNomeCorrentista(){
+                return this._nomeCorrentista;
+            }
+            setNomeCorrentista(value){
+                this._nomeCorrentista = value;
+            }
+            getBanco(){
+                return this._banco;
+            }
+            setBanco(value){
+                this._banco = value;
+            }
+            getNumeroConta(){
+                return this._numeroConta;
+            }
+            setNumeroConta(value){
+                this._numeroConta = value;
+            }
+            getSaldo(){
+                return this._saldo;
+            }
+            setSaldo(value){
+                this._saldo = value;
+            }
+        }
+        class Corrente extends Conta{
+            constructor(nomeCorrentista, banco, numeroConta, saldo, saldoEspecial){
+                super(nomeCorrentista, banco, numeroConta, saldo);
+                this._saldoEspecial = saldoEspecial;
+            }
+            getSaldoEspecial(){
+                return this._saldoEspecial;
+            }
+            setSaldoEspecial(value){
+                this.saldoEspecial = value;
+            }
+        }
+        class Poupanca extends Conta{
+            constructor(nomeCorrentista, banco, numeroConta, saldo, juros, dataVencimento){
+                super(nomeCorrentista, banco, numeroConta, saldo);
+                this._juros = juros;
+                this._dataVencimento = dataVencimento;
+            }
+            getJuros(){
+                return this._juros;
+            }
+            setJuros(value){
+                this._juros = value;
+            }
+            getDataVencimento(){
+                return this._dataVencimento;
+            }
+            setDataVencimento(value){
+                this._dataVencimento = value;
+            }
+        }
+        let nome = prompt("Digite o nome do correntista:");
+        let banco = prompt("Digite o nome do banco:")
+        let numeroConta = prompt("Digite o número da conta:")
+        let saldo = parseFloat("Digite o saldo:")
+        
+        // Conta Corrente
+        let saldoEspecial = parseFloat(prompt("Digite o saldo especial da cont corrente:"))
+        let contaCorrente = new Corrente(nome, banco, numeroConta, saldo, saldoEspecial);
+
+        // Conta Poupança
+        let juros = parseFloat(prompt("Digite a taxa de juros da poupança (%):"))
+        let dataVencimento = 
+    </script>
+</body>
+</html>
